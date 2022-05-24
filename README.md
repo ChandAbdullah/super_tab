@@ -16,24 +16,47 @@ know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Change the segment with different tabs or pages with beautiful Super Tab.
+ 
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Install the Package
+
+```dart
+flutter pub add super_tabs
+```
+
+Import the Package
+
+```dart
+import 'package:super_tabs/super_tabs.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+SuperTabs(
+    list: [
+    SuperButton(
+        text: "Current",
+        onPress: () {},
+    ),
+    SuperButton(
+        text: "Completed",
+        onPress: () {},
+    ),
+    SuperButton(
+        text: "Cancelled",
+        onPress: () {},
+    ),
+    ],
+    selectedColor: Colors.blue,
+    unselectedColor: Colors.grey,
+)
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+This package can be use to change between the segments with a beautiful Super Tab. 
+If you have any issue with the package you can create an issue in Github.

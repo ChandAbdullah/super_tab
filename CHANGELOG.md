@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.2.0
 
-* TODO: Describe initial release.
+* To be change between different tabs like segments

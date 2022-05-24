@@ -1,7 +1,7 @@
-name: segments
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+name: super_tabs
+description: To be change between different tabs like segments
+version: 0.2.0
+homepage: https://github.com/ChandAbdullah/super_tab
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
