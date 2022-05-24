@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:super_tabs/model/model.dart';
+import 'package:super_tabs/widget/custom_button.dart';
 
 class SuperTabs extends StatelessWidget {
   SuperTabs({
@@ -22,13 +23,15 @@ class SuperTabs extends StatelessWidget {
       children: [
         for (var index = 0; index < list.length; index++)
           Expanded(
-            child: customButton(
-              context,
-              list[index].text,
-              list[index].onPress,
-              unselectedColor,
-              index == selectedIndex ? unselectedColor : selectedColor,
-              index == 0
+            child: CustomButton(
+              text: list[index].text,
+              isSmallText: true,
+              onPress: list[index].onPress,
+              color: selectedColor,
+              isOutlined: index != selectedIndex,
+              textColor:
+                  index == selectedIndex ? unselectedColor : selectedColor,
+              borderRadius: index == 0
                   ? BorderRadius.only(
                       topLeft: Radius.circular(radius ?? 7.0),
                       bottomLeft: Radius.circular(radius ?? 7.0),
@@ -46,47 +49,6 @@ class SuperTabs extends StatelessWidget {
             ),
           ),
       ],
-    );
-  }
-
-  Widget customButton(
-    BuildContext context,
-    String text,
-    Function() onPress,
-    Color color,
-    Color textColor,
-    BorderRadiusGeometry borderRadius,
-  ) {
-    return SizedBox(
-      height: 45,
-      width: MediaQuery.of(context).size.width,
-      child: ElevatedButton(
-        style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: borderRadius,
-              side: BorderSide(
-                color: color,
-              ),
-            ),
-          ),
-          backgroundColor: MaterialStateProperty.all(
-            Colors.transparent,
-          ),
-          overlayColor: MaterialStateProperty.all(
-            textColor.withOpacity(.1),
-          ),
-        ),
-        onPressed: onPress,
-        child: Text(
-          text,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 15,
-          ),
-        ),
-      ),
     );
   }
 }

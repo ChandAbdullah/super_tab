@@ -1,3 +1,3 @@
 library segments;
 
-export 'widget/widget.dart';
+export 'widget/super_tabs.dart';
