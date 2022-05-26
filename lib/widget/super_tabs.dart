@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:super_tabs/model/model.dart';
 import 'package:super_tabs/widget/custom_button.dart';
 
 class SuperTabs extends StatelessWidget {
   SuperTabs({
     required this.list,
+    required this.onClick,
     required this.selectedColor,
     required this.unselectedColor,
-    this.selectedIndex,
+    this.selectedIndex = 0,
     this.radius,
   });
 
-  List<SuperButton> list;
-  int? selectedIndex = 1;
+  List<String> list;
+  int? selectedIndex;
   double? radius = 7.0;
   Color selectedColor;
   Color unselectedColor;
+  Function(int) onClick;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +25,11 @@ class SuperTabs extends StatelessWidget {
         for (var index = 0; index < list.length; index++)
           Expanded(
             child: CustomButton(
-              text: list[index].text,
+              text: list[index],
               isSmallText: true,
-              onPress: list[index].onPress,
+              onPress: () {
+                onClick(index);
+              },
               color: selectedColor,
               isOutlined: index != selectedIndex,
               textColor:
