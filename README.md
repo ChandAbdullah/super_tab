@@ -23,24 +23,25 @@ import 'package:super_tabs/super_tabs.dart';
 ## Usage
 
 ```dart
-SuperTabs(
-    list: [
-    SuperButton(
-        text: "Current",
-        onPress: () {},
-    ),
-    SuperButton(
-        text: "Completed",
-        onPress: () {},
-    ),
-    SuperButton(
-        text: "Cancelled",
-        onPress: () {},
-    ),
+  int selectedIndex = 0;
+```
+
+```dart
+ SuperTabs(
+    list: const [
+    "Current",
+    "Completed",
+    "Cancelled",
     ],
-    selectedColor: Colors.blue,
-    unselectedColor: Colors.grey,
-)
+    selectedColor: Colors.indigo,
+    unselectedColor: Colors.white,
+    selectedIndex: selectedIndex,
+    onClick: (int value) {
+    setState(() {
+        selectedIndex = value;
+    });
+    },
+),
 ```
 
 ## Additional information
